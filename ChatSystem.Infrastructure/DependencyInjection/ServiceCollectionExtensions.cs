@@ -9,9 +9,13 @@ namespace ChatSystem.Infrastructure.DependencyInjection
     {
         public static IServiceCollection AddChatSystemInfrastructure(this IServiceCollection services, int networkLatencyMs = 100)
         {
-            services.AddSingleton<IChatNetwork>(_ => new MockChatNetwork(networkLatencyMs));
             services.AddSingleton<IChatMessageRepository, ChatMessageRepository>();
             services.AddSingleton<IEventRepository, EventRepository>();
+            services.AddSingleton<IChatNetwork>(provider => 
+                new MockChatNetwork(
+                    provider.GetRequiredService<IChatMessageRepository>(),
+                    provider.GetRequiredService<IEventRepository>(),
+                    networkLatencyMs));
             
             return services;
         }

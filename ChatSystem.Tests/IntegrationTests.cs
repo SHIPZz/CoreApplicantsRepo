@@ -20,6 +20,9 @@ namespace ChatSystem.Tests
             services.AddChatSystemApplication();
             services.AddChatSystemInfrastructure(50);
             _serviceProvider = services.BuildServiceProvider();
+            
+            var messageRepository = _serviceProvider.GetRequiredService<IChatMessageRepository>();
+            messageRepository.ClearAllMessagesAsync().Wait();
         }
 
         [TearDown]
@@ -37,9 +40,9 @@ namespace ChatSystem.Tests
             var network = _serviceProvider.GetRequiredService<IChatNetwork>();
             var factory = _serviceProvider.GetRequiredService<IChatManagerFactory>();
 
-            using var client1 = factory.CreateChatManager("Player1");
-            using var client2 = factory.CreateChatManager("Player2");
-            using var client3 = factory.CreateChatManager("Player3");
+            var client1 = factory.CreateChatManager("Player1");
+             var client2 = factory.CreateChatManager("Player2");
+             var client3 = factory.CreateChatManager("Player3");
 
             network.AddClient("Player1");
             network.AddClient("Player2");
@@ -61,6 +64,10 @@ namespace ChatSystem.Tests
             {
                 await client1.SendChatMessageAsync(ChatType.Public, "Hello from Player1");
                 await Task.Delay(100);
+                await client2.SendChatMessageAsync(ChatType.Public, "Hello from Player2");
+                await Task.Delay(100);
+                await client3.SendChatMessageAsync(ChatType.Public, "Hello from Player3");
+                await Task.Delay(100);
             }
             catch (Exception ex)
             {
@@ -72,8 +79,8 @@ namespace ChatSystem.Tests
             Assert.That(client3Messages.Count, Is.EqualTo(1));
 
             Assert.That(client1Messages[0].Content, Is.EqualTo("Hello from Player1"));
-            Assert.That(client2Messages[0].Content, Is.EqualTo("Hello from Player1"));
-            Assert.That(client3Messages[0].Content, Is.EqualTo("Hello from Player1"));
+            Assert.That(client2Messages[0].Content, Is.EqualTo("Hello from Player2"));
+            Assert.That(client3Messages[0].Content, Is.EqualTo("Hello from Player3"));
         }
 
         [Test]

@@ -62,7 +62,9 @@ namespace ChatSystem.Infrastructure.Repositories
                 
                 lock (_lockObject)
                 {
-                    _processedMessages[CreateMessageKey(message)] = DateTime.UtcNow;
+                    var key = CreateMessageKey(message);
+                    _processedMessages[key] = DateTime.UtcNow;
+                    Console.WriteLine($"@@@Added message with key '{key}' to processed messages");
                 }
             }
             catch (Exception ex)
@@ -81,7 +83,9 @@ namespace ChatSystem.Infrastructure.Repositories
                 
                 lock (_lockObject)
                 {
-                    return _processedMessages.ContainsKey(key);
+                    var isDuplicate = _processedMessages.ContainsKey(key);
+                    Console.WriteLine($"@@@Duplicate check for key '{key}': {isDuplicate}");
+                    return isDuplicate;
                 }
             }
             catch (Exception ex)
@@ -118,9 +122,28 @@ namespace ChatSystem.Infrastructure.Repositories
             }
         }
 
+        public async Task ClearAllMessagesAsync(CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                await Task.Delay(10, cancellationToken);
+                
+                lock (_lockObject)
+                {
+                    _messages.Clear();
+                    _processedMessages.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"@@@Error in ClearAllMessagesAsync: {ex.Message}");
+                throw;
+            }
+        }
+
         private string CreateMessageKey(ChatMessage message)
         {
-            return $"{message.Type}_{message.Sender}_{message.Content}";
+            return $"{message.Sender}:{message.Content}:{message.Type}";
         }
     }
 } 

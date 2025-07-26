@@ -1,23 +1,42 @@
 {
   "version": 2,
-  "dgSpecHash": "qJtWNqhscY8=",
+  "dgSpecHash": "NuovC+9UbhY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem.Tests\\ChatSystem.Tests.csproj",
+  "projectFilePath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Tests\\ChatSystem.Tests.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\freim\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\microsoft.net.test.sdk\\17.12.0\\microsoft.net.test.sdk.17.12.0.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.12.0\\microsoft.testplatform.objectmodel.17.12.0.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\microsoft.testplatform.testhost\\17.12.0\\microsoft.testplatform.testhost.17.12.0.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\moq\\4.20.72\\moq.4.20.72.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\nunit\\4.2.2\\nunit.4.2.2.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\nunit.analyzers\\4.4.0\\nunit.analyzers.4.4.0.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\nunit3testadapter\\4.6.0\\nunit3testadapter.4.6.0.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512",
-    "C:\\Users\\freim\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+    "C:\\Users\\mrken\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.net.test.sdk\\17.12.0\\microsoft.net.test.sdk.17.12.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.testing.extensions.telemetry\\1.5.3\\microsoft.testing.extensions.telemetry.1.5.3.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.testing.extensions.trxreport.abstractions\\1.5.3\\microsoft.testing.extensions.trxreport.abstractions.1.5.3.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.testing.extensions.vstestbridge\\1.5.3\\microsoft.testing.extensions.vstestbridge.1.5.3.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.testing.platform\\1.5.3\\microsoft.testing.platform.1.5.3.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.testing.platform.msbuild\\1.5.3\\microsoft.testing.platform.msbuild.1.5.3.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.12.0\\microsoft.testplatform.objectmodel.17.12.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\microsoft.testplatform.testhost\\17.12.0\\microsoft.testplatform.testhost.17.12.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\moq\\4.20.70\\moq.4.20.70.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\nunit3testadapter\\5.0.0\\nunit3testadapter.5.0.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512",
+    "C:\\Users\\mrken\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "ChatSystem.Tests depends on NUnit3TestAdapter (>= 4.10.0) but NUnit3TestAdapter 4.10.0 was not found. NUnit3TestAdapter 5.0.0 was resolved instead.",
+      "libraryId": "NUnit3TestAdapter",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

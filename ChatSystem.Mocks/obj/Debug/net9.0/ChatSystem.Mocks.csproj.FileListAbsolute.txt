@@ -17,15 +17,11 @@ C:\Users\freim\source\repos\SavannahApplicantsRepos\ChatSystem.Mocks\obj\Debug\n
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\bin\Debug\net9.0\ChatSystem.Mocks.deps.json
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\bin\Debug\net9.0\ChatSystem.Mocks.dll
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\bin\Debug\net9.0\ChatSystem.Mocks.pdb
-E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\bin\Debug\net9.0\ChatSystem.Core.dll
-E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\bin\Debug\net9.0\ChatSystem.Core.pdb
-E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSystem.Mocks.csproj.AssemblyReference.cache
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSystem.Mocks.GeneratedMSBuildEditorConfig.editorconfig
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSystem.Mocks.AssemblyInfoInputs.cache
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSystem.Mocks.AssemblyInfo.cs
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSystem.Mocks.csproj.CoreCompileInputs.cache
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSystem.Mocks.sourcelink.json
-E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSyst.4C07453D.Up2Date
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSystem.Mocks.dll
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\refint\ChatSystem.Mocks.dll
 E:\Projects\CoreApplicantsRepo\ChatSystem.Mocks\obj\Debug\net9.0\ChatSystem.Mocks.pdb

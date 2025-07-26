@@ -12,6 +12,7 @@ namespace ChatSystem.Application.Services
         private readonly IEventRepository _eventRepository;
         private readonly Subject<ChatMessage> _messageSubject = new();
         private readonly Subject<(EventType, object)> _eventSubject = new();
+        private readonly HashSet<string> _recentlySentMessages = new();
 
         public ChatMediator(IChatNetwork network, IChatMessageRepository messageRepository, IEventRepository eventRepository)
         {
@@ -34,9 +35,15 @@ namespace ChatSystem.Application.Services
                     return;
                 }
 
+                var messageKey = CreateMessageKey(message);
+                _recentlySentMessages.Add(messageKey);
+                
                 await _messageRepository.AddMessageAsync(message, cancellationToken);
                 await CleanupOldMessagesIfNeeded(cancellationToken);
                 await _network.SendMessageAsync(message, cancellationToken);
+                
+                await Task.Delay(100, cancellationToken);
+                _recentlySentMessages.Remove(messageKey);
             }
             catch (Exception ex)
             {
@@ -79,6 +86,13 @@ namespace ChatSystem.Application.Services
         {
             try
             {
+                var messageKey = CreateMessageKey(message);
+                if (_recentlySentMessages.Contains(messageKey))
+                {
+                    Console.WriteLine($"Mediator: Ignoring recently sent message: {message}");
+                    return;
+                }
+                
                 Console.WriteLine($"Mediator: Processing message from {message.Sender}");
                 _messageSubject.OnNext(message);
             }
@@ -121,6 +135,11 @@ namespace ChatSystem.Application.Services
         private void HandleError(string methodName, Exception ex)
         {
             Console.WriteLine($"@@@Error in {methodName}: {ex.Message}");
+        }
+        
+        private string CreateMessageKey(ChatMessage message)
+        {
+            return $"{message.Sender}:{message.Content}:{message.Type}";
         }
     }
 } 

@@ -1,7 +1,10 @@
-﻿using ChatSystem.Core;
+﻿using ChatSystem.Application.Services;
+using ChatSystem.Application.DependencyInjection;
 using ChatSystem.Domain.Entities;
 using ChatSystem.Domain.Enums;
 using ChatSystem.Domain.Interfaces;
+using ChatSystem.Infrastructure.Network;
+using ChatSystem.Infrastructure.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ChatSystem.Demo
@@ -28,7 +31,8 @@ namespace ChatSystem.Demo
         private static (IChatNetwork, IChatManager, IChatManager, IChatManager) SetupChatSystem()
         {
             var services = new ServiceCollection();
-            services.AddChatSystem(150);
+            services.AddChatSystemInfrastructure(150);
+            services.AddChatSystemApplication();
             var serviceProvider = services.BuildServiceProvider();
 
             var network = serviceProvider.GetRequiredService<IChatNetwork>();

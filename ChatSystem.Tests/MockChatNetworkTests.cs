@@ -1,11 +1,9 @@
 using ChatSystem.Domain.Entities;
 using ChatSystem.Domain.Enums;
+using ChatSystem.Domain.Interfaces;
 using ChatSystem.Infrastructure.Network;
+using ChatSystem.Infrastructure.Repositories;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace ChatSystem.Tests
 {
@@ -15,11 +13,15 @@ namespace ChatSystem.Tests
         private MockChatNetwork _network;
         private List<ChatMessage> _receivedMessages;
         private List<(EventType, object)> _receivedEvents;
+        private IEventRepository _eventRepository;
+        private IChatMessageRepository _chatMessageRepository;
 
         [SetUp]
         public void SetUp()
         {
-            _network = new MockChatNetwork(50);
+            _eventRepository = new EventRepository();
+            _chatMessageRepository = new ChatMessageRepository();
+            _network = new MockChatNetwork(_chatMessageRepository,_eventRepository,50);
             _receivedMessages = new List<ChatMessage>();
             _receivedEvents = new List<(EventType, object)>();
 
@@ -60,7 +62,7 @@ namespace ChatSystem.Tests
         [Test]
         public async Task RaiseEventAsync_BroadcastsToAllClients()
         {
-            var testNetwork = new MockChatNetwork(50);
+            var testNetwork = new MockChatNetwork(_chatMessageRepository,_eventRepository,50);
             var testEvents = new List<(EventType, object)>();
             testNetwork.OnEventReceived.Subscribe(ev => testEvents.Add(ev));
 

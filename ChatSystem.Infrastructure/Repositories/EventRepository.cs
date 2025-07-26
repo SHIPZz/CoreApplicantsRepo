@@ -71,5 +71,19 @@ namespace ChatSystem.Infrastructure.Repositories
                 throw;
             }
         }
+
+        public async Task ClearAllEventsAsync(CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                await Task.Delay(10, cancellationToken);
+                _events.Clear();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"@@@Error in ClearAllEventsAsync: {ex.Message}");
+                throw;
+            }
+        }
     }
 } 

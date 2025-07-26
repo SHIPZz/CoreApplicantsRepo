@@ -10,13 +10,16 @@ namespace ChatSystem.Infrastructure.Network
         private readonly Subject<ChatMessage> _messageSubject = new();
         private readonly Subject<(EventType, object)> _eventSubject = new();
         private readonly List<string> _clients = new();
-        private readonly List<string> _processedMessages = new();
         private readonly Lock _lockObject = new();
         private readonly int _latencyMs;
+        private readonly IChatMessageRepository _messageRepository;
+        private readonly IEventRepository _eventRepository;
         private bool _isConnected = true;
 
-        public MockChatNetwork(int latencyMs = 100)
+        public MockChatNetwork(IChatMessageRepository messageRepository, IEventRepository eventRepository, int latencyMs = 100)
         {
+            _messageRepository = messageRepository;
+            _eventRepository = eventRepository;
             _latencyMs = latencyMs;
         }
 
@@ -28,14 +31,14 @@ namespace ChatSystem.Infrastructure.Network
             try
             {
                 ValidateConnection();
-                if (IsDuplicateMessage(message))
+                if (await _messageRepository.IsDuplicateMessageAsync(message, cancellationToken))
                 {
                     LogDuplicateMessage(message);
                     return;
                 }
 
-                AddMessageToProcessedList(message);
-                CleanupOldMessagesIfNeeded();
+                await _messageRepository.AddMessageAsync(message, cancellationToken);
+                await _messageRepository.ClearOldMessagesAsync(TimeSpan.FromMinutes(5), cancellationToken);
                 await SimulateNetworkLatencyAsync(cancellationToken);
                 BroadcastMessageIfClientConnected(message);
             }
@@ -51,6 +54,8 @@ namespace ChatSystem.Infrastructure.Network
             try
             {
                 ValidateConnection();
+                await _eventRepository.AddEventAsync(eventType, data, cancellationToken);
+                await _eventRepository.ClearOldEventsAsync(TimeSpan.FromMinutes(5), cancellationToken);
                 await SimulateNetworkLatencyAsync(cancellationToken);
                 BroadcastEvent(eventType, data);
             }
@@ -118,43 +123,9 @@ namespace ChatSystem.Infrastructure.Network
             }
         }
 
-        private bool IsDuplicateMessage(ChatMessage message)
-        {
-            lock (_lockObject)
-            {
-                var key = CreateMessageKey(message);
-                return _processedMessages.Contains(key);
-            }
-        }
-
-        private string CreateMessageKey(ChatMessage message)
-        {
-            return $"{message.Sender}:{message.Content}:{message.Type}";
-        }
-
         private void LogDuplicateMessage(ChatMessage message)
         {
             Console.WriteLine($"Authority: Duplicate message filtered - {message}");
-        }
-
-        private void AddMessageToProcessedList(ChatMessage message)
-        {
-            lock (_lockObject)
-            {
-                var key = CreateMessageKey(message);
-                _processedMessages.Add(key);
-            }
-        }
-
-        private void CleanupOldMessagesIfNeeded()
-        {
-            lock (_lockObject)
-            {
-                if (_processedMessages.Count > 100)
-                {
-                    _processedMessages.RemoveRange(0, 50);
-                }
-            }
         }
 
         private async Task SimulateNetworkLatencyAsync(CancellationToken cancellationToken)
@@ -167,7 +138,9 @@ namespace ChatSystem.Infrastructure.Network
             lock (_lockObject)
             {
                 LogMessageBroadcast(message);
+                Console.WriteLine($"@@@Broadcasting message: {message}");
                 _messageSubject.OnNext(message);
+                Console.WriteLine($"@@@Message broadcasted: {message}");
             }
         }
 

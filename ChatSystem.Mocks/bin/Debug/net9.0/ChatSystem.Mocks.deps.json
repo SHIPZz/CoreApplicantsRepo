@@ -7,82 +7,14 @@
   "targets": {
     ".NETCoreApp,Version=v9.0": {
       "ChatSystem.Mocks/1.0.0": {
-        "dependencies": {
-          "ChatSystem.Core": "1.0.0"
-        },
         "runtime": {
           "ChatSystem.Mocks.dll": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection/9.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0"
-        },
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.24.52809"
-          }
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.0": {
-        "runtime": {
-          "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.24.52809"
-          }
-        }
-      },
-      "System.Reactive/6.0.1": {
-        "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.1.7420"
-          }
-        }
-      },
-      "ChatSystem.Core/1.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "9.0.0",
-          "System.Reactive": "6.0.1"
-        },
-        "runtime": {
-          "ChatSystem.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
         }
       }
     }
   },
   "libraries": {
     "ChatSystem.Mocks/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.DependencyInjection/9.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-MCPrg7v3QgNMr0vX4vzRXvkNGgLg8vKWX0nKCWUxu2uPyMsaRgiRc1tHBnbTcfJMhMKj2slE/j2M9oGkd25DNw==",
-      "path": "microsoft.extensions.dependencyinjection/9.0.0",
-      "hashPath": "microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+6f2qv2a3dLwd5w6JanPIPs47CxRbnk+ZocMJUhv9NxP88VlOcJYZs9jY+MYSjxvady08bUZn6qgiNh7DadGgg==",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.0",
-      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
-    },
-    "System.Reactive/6.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rHaWtKDwCi9qJ3ObKo8LHPMuuwv33YbmQi7TcUK1C264V3MFnOr5Im7QgCTdLniztP3GJyeiSg5x8NqYJFqRmg==",
-      "path": "system.reactive/6.0.1",
-      "hashPath": "system.reactive.6.0.1.nupkg.sha512"
-    },
-    "ChatSystem.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

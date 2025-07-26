@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChatSystem.Core\ChatSystem.Core.csproj" />
+    <ProjectReference Include="..\ChatSystem.Application\ChatSystem.Application.csproj" />
+    <ProjectReference Include="..\ChatSystem.Domain\ChatSystem.Domain.csproj" />
+    <ProjectReference Include="..\ChatSystem.Infrastructure\ChatSystem.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

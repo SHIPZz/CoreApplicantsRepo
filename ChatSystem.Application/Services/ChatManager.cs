@@ -100,10 +100,13 @@ namespace ChatSystem.Application.Services
         {
             try
             {
+                Console.WriteLine($"@@@Sending message: {message}");
                 await _mediator.SendMessageAsync(message, cancellationToken);
+                Console.WriteLine($"@@@Message sent successfully: {message}");
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"@@@Retry triggered for message {message}: {ex.Message}");
                 HandleNetworkError(ex);
                 await WaitForRetryAsync(cancellationToken);
                 await _mediator.SendMessageAsync(message, cancellationToken);

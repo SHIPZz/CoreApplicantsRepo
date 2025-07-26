@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem.Tests\\ChatSystem.Tests.csproj": {}
+    "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Tests\\ChatSystem.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem.Tests\\ChatSystem.Tests.csproj": {
+    "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Application\\ChatSystem.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem.Tests\\ChatSystem.Tests.csproj",
-        "projectName": "ChatSystem.Tests",
-        "projectPath": "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem.Tests\\ChatSystem.Tests.csproj",
-        "packagesPath": "C:\\Users\\freim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem.Tests\\obj\\",
+        "projectUniqueName": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Application\\ChatSystem.Application.csproj",
+        "projectName": "ChatSystem.Application",
+        "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Application\\ChatSystem.Application.csproj",
+        "packagesPath": "C:\\Users\\mrken\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\freim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mrken\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem\\ChatSystem.Core.csproj": {
-                "projectPath": "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem\\ChatSystem.Core.csproj"
+              "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj": {
+                "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj"
               }
             }
           }
@@ -48,31 +49,272 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj",
+        "projectName": "ChatSystem.Domain",
+        "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj",
+        "packagesPath": "C:\\Users\\mrken\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mrken\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Infrastructure\\ChatSystem.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Infrastructure\\ChatSystem.Infrastructure.csproj",
+        "projectName": "ChatSystem.Infrastructure",
+        "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Infrastructure\\ChatSystem.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\mrken\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mrken\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Application\\ChatSystem.Application.csproj": {
+                "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Application\\ChatSystem.Application.csproj"
+              },
+              "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj": {
+                "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Tests\\ChatSystem.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Tests\\ChatSystem.Tests.csproj",
+        "projectName": "ChatSystem.Tests",
+        "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Tests\\ChatSystem.Tests.csproj",
+        "packagesPath": "C:\\Users\\mrken\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mrken\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Application\\ChatSystem.Application.csproj": {
+                "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Application\\ChatSystem.Application.csproj"
+              },
+              "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj": {
+                "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Domain\\ChatSystem.Domain.csproj"
+              },
+              "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Infrastructure\\ChatSystem.Infrastructure.csproj": {
+                "projectPath": "E:\\Projects\\CoreApplicantsRepo\\ChatSystem.Infrastructure\\ChatSystem.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.12.0, )"
             },
             "Moq": {
               "target": "Package",
-              "version": "[4.20.72, )"
+              "version": "[4.20.70, )"
             },
             "NUnit": {
               "target": "Package",
-              "version": "[4.2.2, )"
-            },
-            "NUnit.Analyzers": {
-              "target": "Package",
-              "version": "[4.4.0, )"
+              "version": "[4.1.0, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.6.0, )"
+              "version": "[4.10.0, )"
             },
             "coverlet.collector": {
               "target": "Package",
@@ -95,78 +337,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem\\ChatSystem.Core.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem\\ChatSystem.Core.csproj",
-        "projectName": "ChatSystem.Core",
-        "projectPath": "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem\\ChatSystem.Core.csproj",
-        "packagesPath": "C:\\Users\\freim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\freim\\source\\repos\\SavannahApplicantsRepos\\ChatSystem\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\freim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "dependencies": {
-            "System.Reactive": {
-              "target": "Package",
-              "version": "[6.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

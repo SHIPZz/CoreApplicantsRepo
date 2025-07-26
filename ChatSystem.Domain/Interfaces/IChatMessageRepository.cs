@@ -11,5 +11,6 @@ namespace ChatSystem.Domain.Interfaces
         Task AddMessageAsync(ChatMessage message, CancellationToken cancellationToken = default);
         Task<bool> IsDuplicateMessageAsync(ChatMessage message, CancellationToken cancellationToken = default);
         Task ClearOldMessagesAsync(TimeSpan olderThan, CancellationToken cancellationToken = default);
+        Task ClearAllMessagesAsync(CancellationToken cancellationToken = default);
     }
 } 
