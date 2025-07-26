@@ -31,14 +31,6 @@ namespace ChatSystem.Infrastructure.Network
             try
             {
                 ValidateConnection();
-                if (await _messageRepository.IsDuplicateMessageAsync(message, cancellationToken))
-                {
-                    LogDuplicateMessage(message);
-                    return;
-                }
-
-                await _messageRepository.AddMessageAsync(message, cancellationToken);
-                await _messageRepository.ClearOldMessagesAsync(TimeSpan.FromMinutes(5), cancellationToken);
                 await SimulateNetworkLatencyAsync(cancellationToken);
                 BroadcastMessageIfClientConnected(message);
             }
@@ -139,6 +131,7 @@ namespace ChatSystem.Infrastructure.Network
             {
                 LogMessageBroadcast(message);
                 Console.WriteLine($"@@@Broadcasting message: {message}");
+                Console.WriteLine($"@@@Number of subscribers: {_messageSubject.HasObservers}");
                 _messageSubject.OnNext(message);
                 Console.WriteLine($"@@@Message broadcasted: {message}");
             }

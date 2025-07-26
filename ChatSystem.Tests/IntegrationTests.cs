@@ -74,13 +74,21 @@ namespace ChatSystem.Tests
                 Assert.Fail($"Unexpected exception: {ex.Message}");
             }
 
-            Assert.That(client1Messages.Count, Is.EqualTo(1));
-            Assert.That(client2Messages.Count, Is.EqualTo(1));
-            Assert.That(client3Messages.Count, Is.EqualTo(1));
+            Assert.That(client1Messages.Count, Is.EqualTo(3));
+            Assert.That(client2Messages.Count, Is.EqualTo(3));
+            Assert.That(client3Messages.Count, Is.EqualTo(3));
 
-            Assert.That(client1Messages[0].Content, Is.EqualTo("Hello from Player1"));
-            Assert.That(client2Messages[0].Content, Is.EqualTo("Hello from Player2"));
-            Assert.That(client3Messages[0].Content, Is.EqualTo("Hello from Player3"));
+            Assert.That(client1Messages.Any(m => m.Content == "Hello from Player1"), Is.True);
+            Assert.That(client1Messages.Any(m => m.Content == "Hello from Player2"), Is.True);
+            Assert.That(client1Messages.Any(m => m.Content == "Hello from Player3"), Is.True);
+            
+            Assert.That(client2Messages.Any(m => m.Content == "Hello from Player1"), Is.True);
+            Assert.That(client2Messages.Any(m => m.Content == "Hello from Player2"), Is.True);
+            Assert.That(client2Messages.Any(m => m.Content == "Hello from Player3"), Is.True);
+            
+            Assert.That(client3Messages.Any(m => m.Content == "Hello from Player1"), Is.True);
+            Assert.That(client3Messages.Any(m => m.Content == "Hello from Player2"), Is.True);
+            Assert.That(client3Messages.Any(m => m.Content == "Hello from Player3"), Is.True);
         }
 
         [Test]
