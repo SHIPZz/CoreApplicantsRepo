@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ChatSystem.Domain.Enums;
 
-namespace ChatSystem.Core
+namespace ChatSystem.Application.Builders
 {
     public class NotificationBuilder
     {
         private EventType _type;
-        private string _message;
+        private string _message = string.Empty;
 
         public NotificationBuilder SetType(EventType type)
         {
@@ -28,4 +24,4 @@ namespace ChatSystem.Core
             return (_type, _message);
         }
     }
-}
+} 
